@@ -2,31 +2,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        li{
-            list-style-type: none;
-            max-width: 200px;
-            padding: 8px;
-            margin: 8px auto;
-            background: #eee;
-            border: 1px dotted #ddd;
-        }
-    </style>
+    <title>Popup</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Todos</h1>
 
-    <ul>
-        <li>buy milk</li>
-        <li>read a book</li>
-        <li>play the guitar</li>
-        <li>pay the bills :(</li>
-    </ul>
+    <button>click me</button>
 
-    <button>add new Todo</button>
+    <div class="popup-wrapper">
 
-   <script src="sandbox.js"></script>
+        <div class="popup">
+            <div class="popup-close">x</div>
+            
+            <div class="popup-content">
+                <h2>Ninja Sale!!!</h2>
+                <p>50% off all ninja clothing, don't miss out!!</p>
+                <a href="#"> view clothing</a>
+            </div>
+        </div>
+
+    </div>
+
+   <script src="popup.js"></script>
 </body>
 </html>
