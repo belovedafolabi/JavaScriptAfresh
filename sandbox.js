@@ -1,30 +1,21 @@
-/* const items = document.querySelectorAll('li'); */
+// Copy Event
+const copy = document.querySelector('.copy-me');
 
-const ul = document.querySelector('ul');
-
-const button = document.querySelector('button');
-
-button.addEventListener('click', () => {
-    const li = document.createElement('li');
-    li.textContent = 'something new to do';
-    li.style.color = 'crimson';
-    ul.append(li);
-    //ul.prepend(li);
+// Event listerner to log when a specified element is being copied
+copy.addEventListener('copy', ()=>{
+    console.log('Oi mate! my content is copyrighted. ')
 });
 
-/* items.forEach(item => {
-    let name = [];
-    item.addEventListener('click', e =>{
-        e.target.remove();
-        e.stopPropagation();
-        console.log('Event in LI');
-    });
-}); */
+// Event listerner to track the coordinates(X and Y) of the mouse within an element
+const box = document.querySelector('.box');
 
-ul.addEventListener('click', e =>{
-    console.log('Event in UL');
-    //console.log(e.target)
-    if(e.target.tagName == "LI"){
-        e.target.remove();
-    }
+box.addEventListener('mousemove', e =>{
+    //console.log(e);
+    box.textContent = `x pos- ${e.offsetX} y pos- ${e.offsetY}`;
+});
+
+// // Event listerner to track the position of the entire documnet
+
+document.addEventListener('wheel', e =>{
+    console.log(e.pageX, e.pageY);
 });
