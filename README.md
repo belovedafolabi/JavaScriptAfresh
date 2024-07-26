@@ -31,7 +31,8 @@ Clone the repo:
 Contributing
 Fork the repo, make changes, and create a pull request!
 
-Contact
-GitHub: belovedafolabi
-Email: belovedafolabi@gmail.com
-Happy coding! 😃
+### Contact
+* GitHub: belovedafolabi
+* Email: belovedafolabi@gmail.com
+
+### Happy coding! 😃
