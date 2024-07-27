@@ -5,27 +5,30 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        li{
-            list-style-type: none;
-            max-width: 200px;
-            padding: 8px;
-            margin: 8px auto;
+
+        body{
             background: #eee;
-            border: 1px dotted #ddd;
+        }
+        form{
+            max-width: 200px;
+            margin: 40px auto;
+            background: white;
+            padding: 10px;
+        }
+        input{
+            display:block;
+            margin: 10px auto;
+            padding: 4px;
+            outline: none;
         }
     </style>
 </head>
 <body>
-    <h1>Todos</h1>
-
-    <ul>
-        <li>buy milk</li>
-        <li>read a book</li>
-        <li>play the guitar</li>
-        <li>pay the bills :(</li>
-    </ul>
-
-    <button>add new Todo</button>
+    <form action="" class="signup-form">
+        <input type="text" name="username" id="username" placeholder="username">
+        <input type="submit" value="submit">
+        <div class="feedback"></div>
+    </form>
 
    <script src="sandbox.js"></script>
 </body>

@@ -1,30 +1,30 @@
-/* const items = document.querySelectorAll('li'); */
+// get the form element
+const form = document.querySelector('.signup-form');
+const feedback = document.querySelector('.feedback');
 
-const ul = document.querySelector('ul');
+// The regEx pattern for the username
+const pattern = /^[a-xA-z]{6,}$/;
 
-const button = document.querySelector('button');
+form.addEventListener('submit', e =>{
+    e.preventDefault();
 
-button.addEventListener('click', () => {
-    const li = document.createElement('li');
-    li.textContent = 'something new to do';
-    li.style.color = 'crimson';
-    ul.append(li);
-    //ul.prepend(li);
+    if(pattern.test(form.username.value)){
+        console.log('username is good :)');
+    }
+    else{
+        console.log('username is bad :(');
+    }
 });
 
-/* items.forEach(item => {
-    let name = [];
-    item.addEventListener('click', e =>{
-        e.target.remove();
-        e.stopPropagation();
-        console.log('Event in LI');
-    });
-}); */
+// give live feedback on input validation
+form.username.addEventListener('keyup', e =>{
 
-ul.addEventListener('click', e =>{
-    console.log('Event in UL');
-    //console.log(e.target)
-    if(e.target.tagName == "LI"){
-        e.target.remove();
+    if(pattern.test(form.username.value)){
+        form.username.setAttribute('class', 'success');
+        feedback.textContent = 'that username is good';
+    }else{
+        form.username.setAttribute('class', 'error');
+        feedback.textContent = 'the username must contain only letter and be at least 6 characters long.';
     }
+
 });
