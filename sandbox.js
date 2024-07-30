@@ -3,7 +3,7 @@ const form = document.querySelector('.signup-form');
 const feedback = document.querySelector('.feedback');
 
 // The regEx pattern for the username
-const pattern = /^[a-xA-z]{6,}$/;
+const pattern = /^[a-xA-z]{6,10}$/;
 
 form.addEventListener('submit', e =>{
     e.preventDefault();
