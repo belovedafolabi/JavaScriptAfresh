@@ -12,7 +12,7 @@ To get started with the Custom Ninja Quiz, follow these steps:
 
 1. **Clone the repo**:
     ```sh
-    git clone https://github.com/yourusername/ninja-quiz.git
+    git clone https://github.com/belovedafolabi/ninja-quiz.git
     ```
 2. **Navigate to the project directory**:
     ```sh
