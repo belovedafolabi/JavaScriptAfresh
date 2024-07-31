@@ -1,30 +1,26 @@
-/* const items = document.querySelectorAll('li'); */
+// Form Element
+const form = document.getElementById("ninjaForm");
+// Score Display Element
+const scoreContent = document.getElementById("scoreContent");
+// Score Percentage
+const scorePercentage = document.getElementById("scorePercentage");
 
-const ul = document.querySelector('ul');
 
-const button = document.querySelector('button');
-
-button.addEventListener('click', () => {
-    const li = document.createElement('li');
-    li.textContent = 'something new to do';
-    li.style.color = 'crimson';
-    ul.append(li);
-    //ul.prepend(li);
-});
-
-/* items.forEach(item => {
-    let name = [];
-    item.addEventListener('click', e =>{
-        e.target.remove();
-        e.stopPropagation();
-        console.log('Event in LI');
-    });
-}); */
-
-ul.addEventListener('click', e =>{
-    console.log('Event in UL');
-    //console.log(e.target)
-    if(e.target.tagName == "LI"){
-        e.target.remove();
+form.addEventListener('submit', e =>{
+    e.preventDefault();
+    // Mark quiz function from quiz.js
+    const score = markQuiz(questionAnswers);
+    let scorePercent = ( score / questionAnswers.length) * 100;
+    scorePercentage.textContent = `${scorePercent}%`;
+    // Display the score percentage after quiz is submitted
+    scoreContent.classList.remove('hidden');
+    // Scroll back to top smoothly
+    function smoothScrollToTop() {
+        const currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+        if (currentScroll > 0) {
+            window.requestAnimationFrame(smoothScrollToTop);
+            window.scrollTo(0, currentScroll - currentScroll / 11);
+        }
     }
+    smoothScrollToTop();
 });

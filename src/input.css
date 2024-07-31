@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* styles.css */
+.custom-button {
+    @apply select-none rounded-lg bg-white py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-sky-600 shadow-md shadow-blue-500/20 transition-all;
+}
+
+.custom-button:hover {
+    @apply shadow-lg shadow-blue-500/40;
+}
+
+.custom-button:focus {
+    @apply opacity-85 shadow-none;
+}
+
+.custom-button:active {
+    @apply opacity-85 shadow-none;
+}
+
+.custom-button:disabled {
+    @apply pointer-events-none opacity-50 shadow-none;
+}
