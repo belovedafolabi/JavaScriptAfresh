@@ -40,7 +40,7 @@ function generateQuizHTML(questions) {
         <div>
             <p class="text-xl md:text-3xl">${index + 1}. <span id="question${index + 1}">${question}</span></p>
             <div class="p-5 md:p-7 text-gray-200">
-                <input type="radio" name="question${index + 1}" id="option${index + 1}1" value="${option1}" required>
+                <input type="radio" name="question${index + 1}" id="option${index + 1}1" checked value="${option1}" required>
                 <label class="font-thin text-sm md:text-lg" for="option${index + 1}1">${option1}</label><br>
                 <input type="radio" name="question${index + 1}" id="option${index + 1}2" value="${option2}">
                 <label class="font-thin text-sm md:text-lg" for="option${index + 1}2">${option2}</label>
