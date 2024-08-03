@@ -65,6 +65,7 @@ Feel free to reach out to me if you have any questions or suggestions!
 
 - **GitHub**: [belovedafolabi](https://github.com/belovedafolabi)
 - **Email**: [belovedafolabi@gmail.com](mailto:belovedafolabi@gmail.com)
+- **LinkedIn**: [belovedafolabi](https://www.linkedin.com/in/beloved-afolabi)
 
 Happy coding and may your ninja skills be ever sharp! 😄
 

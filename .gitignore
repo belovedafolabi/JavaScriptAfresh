@@ -2,10 +2,10 @@
 node_modules/
 
 # Tailwind CSS output file
-src/output.css
+
 
 # Tailwind CSS output file
-./alt.html
+alt.html
 
 # Operating system files
 .DS_Store
