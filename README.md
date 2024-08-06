@@ -1,4 +1,3 @@
-```markdown
 # JavaScript Array Methods Project 🚀
 
 Welcome to my JavaScript Array Methods project! Here, I demonstrate the use of various array methods such as `filter`, `map`, `find`, and `sort` through practical examples. Let's dive into the details of each method and see some cool implementations.
