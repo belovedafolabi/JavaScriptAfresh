@@ -4,7 +4,7 @@
 
 /* styles.css */
 .custom-button {
-    @apply select-none rounded-lg bg-white py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-sky-600 shadow-md shadow-blue-500/20 transition-all;
+    @apply px-6 py-3 font-sans text-xs font-bold text-center uppercase align-middle transition-all bg-white rounded-lg shadow-md select-none text-sky-600 shadow-blue-500/20;
 }
 
 .custom-button:hover {
@@ -12,13 +12,25 @@
 }
 
 .custom-button:focus {
-    @apply opacity-85 shadow-none;
+    @apply shadow-none opacity-85;
 }
 
 .custom-button:active {
-    @apply opacity-85 shadow-none;
+    @apply shadow-none opacity-85;
 }
 
 .custom-button:disabled {
-    @apply pointer-events-none opacity-50 shadow-none;
+    @apply shadow-none opacity-50 pointer-events-none;
+}
+
+.custom-input{
+    @apply min-w-full p-3 text-white bg-black rounded outline-none opacity-40;
+}
+
+.todoList{
+    @apply bg-indigo-700 text-white p-4 rounded min-w-full flex justify-between items-center border-b-[1px] border-b-gray-800 hover:border-l-[4px] hover:border-l-slate-300;
+}
+
+.todoDeleteBtn{
+    @apply text-lg cursor-pointer hover:animate-bounce;
 }

@@ -3,51 +3,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/output.css">
-    <title>Ninja Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <title>🥷Ninja To Do</title>
 
 </head>
 <body>
     <!-- Body Wrapper -->
-    <div class="bg-white font-sans min-w-full">
+    <div class="flex flex-col items-center min-h-screen bg-indigo-900">
 
-        <!-- Heading Wrapper -->
-        <div class="my-5 md:my-10 text-4xl md:text-8xl font-thin text-sky-600 w-full flex items-center justify-center">
-            <p>Code Ninja Quiz</p>
-        </div>
-        
-        <!-- Grade Content -->
-         <div id="scoreContent" class="bg-zinc-50 md:mt-10 py-7 font-thin w-full flex items-center justify-center hidden">
-            <p>You are <span id="scorePercentage" class="text-6xl text-sky-600 font-thin"> 0% </span> ninja</p>
+        <!-- To Do List Heading -->
+         <div class="p-10">
+            <p class="text-5xl font-medium text-white">Todo List</p>
          </div>
 
-        <!-- Quiz Content -->
-         <div class="bg-sky-500 min-h-full text-white px-8 py-2 md:px-32">
-
-            <!-- Quiz Heading -->
-            <div class="py-12">
-                <p class="text-2xl md:text-4xl font-semibold">On with the questions...</p>
+        <!-- To do Content Wrapper -->
+        <div class="min-w-96">
+ 
+            <!-- Search To Do Section - Input Field -->
+            <div class="min-w-full">
+                <input class="custom-input" type="text" name="todoSearch" id="todoSearch" placeholder="search todos">
             </div>
 
-            <!-- Form/Quiz Content  -->
-             <div>
-                <form id="ninjaForm">
+            <!-- List of current Todo -->
+            <div id="toDoDivList" class="mt-6">
 
-                    <!-- Quiz Questions and answers -->
-                    <div id="formContent"></div>
+                <div class="todoList">
+                    <p class="">play mariokart</p>
+                    <span class="todoDeleteBtn material-symbols-outlined">
+                        delete
+                    </span>
+                </div>
+                <div class="todoList">
+                    <p class="">play mariokart</p>
+                    <span class="todoDeleteBtn material-symbols-outlined">
+                        delete
+                    </span>
+                </div>
+                <div class="todoList">
+                    <p class="">play mariokart</p>
+                    <span class="todoDeleteBtn material-symbols-outlined">
+                        delete
+                    </span>
+                </div>
 
-                    <!-- Submit Button -->
-                    <div class="w-full flex items-center justify-center">
-                        <button class="custom-button" type="submit">
-                            Submit
-                        </button>
-                    </div>
-                </form>
-             </div>
-         </div>
+            </div>
+
+            <!-- Add To Do Section -->
+            <div id="addToDODiv" class="my-6">
+                <p class="p-2 text-center text-white">Add a new todo...</p>
+                <input class="custom-input" type="text" name="todoAdd" id="todoAdd" placeholder="eg: Push sales update">
+            </div>
+
+        </div>
 
     </div>
     
-    <script src="./quiz.js"></script>
     <script src="./sandbox.js"></script>
 </body>
 </html>
