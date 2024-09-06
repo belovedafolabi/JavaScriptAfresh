@@ -1,74 +1,108 @@
-# Custom Ninja Quiz 🥷
+# 🥷 Ninja To-Do List
 
-Welcome to my Custom Ninja Quiz project! This is where I bring out the ninja in you by asking fun and engaging ninja-related questions. This project uses HTML, CSS (with Tailwind), and JavaScript to create an interactive quiz experience. Let's dive into the details!
+Welcome to the **Ninja To-Do List** project! This is a sleek and interactive task management app built with **HTML**, **Tailwind CSS**, and **JavaScript**. It leverages **local storage** to save your tasks, so you can always return to your ninja tasks, even after refreshing the page.
 
 ## Overview
 
-In this project, you'll find a collection of ninja-themed questions designed to test your ninja knowledge. I've used vanilla JavaScript to dynamically generate the quiz questions and handle the form submission. The styling is done using Tailwind CSS to ensure a sleek and modern look.
+The Ninja To-Do List allows you to:
+
+- Add new tasks with ease.
+- Search through your list of todos dynamically.
+- Delete completed tasks with a single click.
+- Enjoy smooth, responsive UI powered by **Tailwind CSS**.
+
+The app is a simple yet effective tool for tracking tasks, with a ninja-inspired design and features to ensure your productivity is top-notch.
+
+## Features
+
+- **Add Todos**: Quickly add new todos with the current date.
+- **Delete Todos**: Remove completed or irrelevant todos easily.
+- **Search Todos**: Filter through your todo list with the built-in search functionality.
+- **Local Storage**: All todos are saved in local storage, so they persist between sessions.
 
 ## Getting Started
 
-To get started with the Custom Ninja Quiz, follow these steps:
-
-1. **Clone the repo**:
-    ```sh
-    git clone https://github.com/belovedafolabi/ninja-quiz.git
+1. **Clone the Repository**:
+    ```bash
+    git clone https://github.com/belovedafolabi/ninja-todo.git
     ```
-2. **Navigate to the project directory**:
-    ```sh
-    cd ninja-quiz
+2. **Navigate to the Project Directory**:
+    ```bash
+    cd ninja-todo
     ```
-3. **Install project dependencies**:
-    ```sh
+3. **Install Dependencies**:
+    Install project dependencies using npm:
+    ```bash
     npm install
     ```
-4. **Open `index.html` in your browser**:
-    ```sh
+4. **Open the App in Your Browser**:
+    Once you've cloned the repo and installed the dependencies, you can open the `index.html` file in your preferred browser:
+    ```bash
     open index.html
     ```
 
-## Quiz Questions
+## How it Works
 
-The quiz consists of fun and quirky ninja-related questions. Each question has multiple choices, and one of them is marked as the correct answer. Here's an example of how the questions are structured in the code:
+- The list of todos is stored in the browser's **localStorage**, allowing you to retain your tasks even when the page is refreshed or reopened.
+- You can **add new tasks** by typing them in the input box and pressing "Enter".
+- Todos are displayed with the **current date** to help you track when they were added.
+- Use the **search bar** to dynamically filter through your tasks as you type.
+- Click the **delete button** next to any task to remove it from the list and from localStorage.
+
+## Code Structure
+
+### Adding a Todo
 
 ```javascript
-const questionAnswers = [
-    "How do you give a ninja directions? - *Show them a map - Don't worry the ninja would find you",
-    "Why don't ninjas get lost? - They have a sixth sense - *They leave a trail of shurikens",
-    "What do you call a ninja who can’t fight? - *A black belt in hide-and-seek - A shadow expert",
-    "How does a ninja get around? - By stealth mode - *Using ninja stars as wheels",
-    "Why did the ninja go to school? - *To master the art of the silent 'A+' - To become a math ninja"
-];
+// Add Listener to detect Enter key press on input
+todoInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' && todoInput.value) {
+        const date = getFormattedDate();
+        const todo = `${todoInput.value.trim()} - ${date}`;
+        addTodoToLocalStorage(todo);
+        loadTodos();
+        todoInput.value = "";
+    }
+});
 ```
 
-## Scrolling to Top
-
-To enhance user experience, I added a smooth scroll-to-top feature using JavaScript:
+### Deleting a Todo
 
 ```javascript
-// Smooth scroll to top
-function smoothScrollToTop() {
-    const currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
-    if (currentScroll > 0) {
-        window.requestAnimationFrame(smoothScrollToTop);
-        window.scrollTo(0, currentScroll - currentScroll / 8);
+// Function to delete a todo item from localStorage
+function deleteTodoItem(todoText, date) {
+    let todoData = JSON.parse(localStorage.getItem('todoData')) || [];
+    const todoToDelete = `${todoText.trim()} - ${date.trim()}`;
+    const index = todoData.indexOf(todoToDelete);
+
+    if (index !== -1) {
+        todoData.splice(index, 1);
+        localStorage.setItem('todoData', JSON.stringify(todoData));
+        loadTodos();
     }
 }
+```
 
-// Event listener for the button
-document.getElementById('scrollToTopBtn').addEventListener('click', smoothScrollToTop);
+### Searching for a Todo
+
+```javascript
+// Function to perform the search
+function performSearch(query) {
+    query = query.toLowerCase();
+    const todoData = JSON.parse(localStorage.getItem('todoData')) || [];
+
+    const filteredTodos = todoData.filter(todo => 
+        todo.toLowerCase().includes(query)
+    );
+
+    displayTodos(filteredTodos);
+}
 ```
 
 ## Contact
 
-Feel free to reach out to me if you have any questions or suggestions!
+Feel free to reach out if you have any questions or suggestions:
 
 - **GitHub**: [belovedafolabi](https://github.com/belovedafolabi)
 - **Email**: [belovedafolabi@gmail.com](mailto:belovedafolabi@gmail.com)
 - **LinkedIn**: [belovedafolabi](https://www.linkedin.com/in/beloved-afolabi)
-
-Happy coding and may your ninja skills be ever sharp! 😄
-
----
-
-Let me know if you need any more adjustments or have other questions!
