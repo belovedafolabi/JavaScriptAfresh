@@ -831,11 +831,6 @@ video {
   min-height: 100vh;
 }
 
-.min-h-fit {
-  min-height: -moz-fit-content;
-  min-height: fit-content;
-}
-
 .w-\[this-is\\\\\] {
   width: this-is\\;
 }
@@ -848,16 +843,8 @@ video {
   width: weird-and-invalid;
 }
 
-.min-w-96 {
-  min-width: 24rem;
-}
-
 .min-w-full {
   min-width: 100%;
-}
-
-.max-w-96 {
-  max-width: 24rem;
 }
 
 .flex-shrink {
@@ -2725,11 +2712,6 @@ video {
 @media (min-width: 768px) {
   .md\:flex {
     display: flex;
-  }
-
-  .md\:min-h-fit {
-    min-height: -moz-fit-content;
-    min-height: fit-content;
   }
 
   .md\:min-h-screen {
