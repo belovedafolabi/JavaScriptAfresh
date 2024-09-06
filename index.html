@@ -9,55 +9,64 @@
 </head>
 <body>
     <!-- Body Wrapper -->
-    <div class="flex flex-col items-center min-h-screen bg-indigo-900">
+    <div class="min-h-screen p-3 bg-indigo-900 md:p-0 md:min-h-screen md:flex md:flex-col md:items-center">
 
         <!-- To Do List Heading -->
-         <div class="p-10">
-            <p class="text-5xl font-medium text-white">Todo List</p>
-         </div>
+        <div class="p-10 group">
+            <p class="text-5xl font-medium text-white">
+                <span class="custom-ease-in-out">🥷</span> Todo List
+            </p>
+        </div>
 
         <!-- To do Content Wrapper -->
-        <div class="min-w-96">
+        <div class="max-w-screen min-w-50 max-w-50 md:min-w-96 md:max-w-96">
  
             <!-- Search To Do Section - Input Field -->
-            <div class="min-w-full">
+            <div class="relative min-w-full">
                 <input class="custom-input" type="text" name="todoSearch" id="todoSearch" placeholder="search todos">
+                <button type="button" class="hidden clearBtn" onclick="">
+                    &times;
+                </button>
             </div>
 
             <!-- List of current Todo -->
             <div id="toDoDivList" class="mt-6">
 
-                <div class="todoList">
-                    <p class="">play mariokart</p>
+            <!-- Each to do is outputed as something similar to this
+                <div class="todoList group">
+                    <div class="flex flex-col">
+                        <p class="">
+                            play mariokart
+                        </p>
+                        <span class="todoDate">
+                            23-Aug-2024
+                        </span>
+                    </div>
                     <span class="todoDeleteBtn material-symbols-outlined">
                         delete
                     </span>
-                </div>
-                <div class="todoList">
-                    <p class="">play mariokart</p>
-                    <span class="todoDeleteBtn material-symbols-outlined">
-                        delete
-                    </span>
-                </div>
-                <div class="todoList">
-                    <p class="">play mariokart</p>
-                    <span class="todoDeleteBtn material-symbols-outlined">
-                        delete
-                    </span>
-                </div>
+                </div> 
+            -->
+
+             
 
             </div>
 
             <!-- Add To Do Section -->
             <div id="addToDODiv" class="my-6">
                 <p class="p-2 text-center text-white">Add a new todo...</p>
-                <input class="custom-input" type="text" name="todoAdd" id="todoAdd" placeholder="eg: Push sales update">
+                <div class="relative min-w-full">
+                    <input class="custom-input" type="text" name="todoAdd" id="todoAdd" placeholder="search todos">
+                    <button type="button" class="hidden clearBtn" onclick="">
+                        &times;
+                    </button>
+                </div>
             </div>
 
         </div>
 
     </div>
     
-    <script src="./sandbox.js"></script>
+    <script type="module" src="./sandbox.js"></script>
 </body>
 </html>

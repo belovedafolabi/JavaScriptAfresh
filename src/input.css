@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 /* styles.css */
+
+.custom-ease-in-out {
+    @apply transition-all duration-200 ease-in-out group-hover:text-6xl group-hover:animate-pulse;
+}
 .custom-button {
     @apply px-6 py-3 font-sans text-xs font-bold text-center uppercase align-middle transition-all bg-white rounded-lg shadow-md select-none text-sky-600 shadow-blue-500/20;
 }
@@ -27,8 +31,16 @@
     @apply min-w-full p-3 text-white bg-black rounded outline-none opacity-40;
 }
 
+.clearBtn{
+    @apply absolute text-gray-400 transition-all duration-200 ease-in-out transform -translate-y-1/2 right-3 top-1/2 hover:text-gray-600;
+}
+
 .todoList{
-    @apply bg-indigo-700 text-white p-4 rounded min-w-full flex justify-between items-center border-b-[1px] border-b-gray-800 hover:border-l-[4px] hover:border-l-slate-300;
+    @apply bg-indigo-700 text-white p-4 rounded min-w-full flex justify-between items-center border-b-[1px] border-b-gray-800 hover:border-l-[4px] hover:border-l-black hover:border-opacity-40 transition-all duration-200 ease-in-out;
+}
+
+.todoDate{
+    @apply mt-1 p-2 max-w-fit text-[10px] bg-indigo-900 rounded-lg group-hover:mt-2 transition-all duration-200 ease-in-out;
 }
 
 .todoDeleteBtn{
