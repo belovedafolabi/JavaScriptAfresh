@@ -24,7 +24,7 @@ The app is a simple yet effective tool for tracking tasks, with a ninja-inspired
 
 1. **Clone the Repository**:
     ```bash
-    git clone https://github.com/belovedafolabi/ninja-todo.git
+    git clone https://github.com/belovedafolabi/JavaScriptAfresh/tree/simpleTodo
     ```
 2. **Navigate to the Project Directory**:
     ```bash
