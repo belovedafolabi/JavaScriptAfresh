@@ -84,7 +84,7 @@ Moving forward, I’d like to:
 ## Closing Thoughts
 
 I created this demo to deepen my understanding of async JavaScript, and I hope it helps you as well! Whether you’re brushing up on async functions or just exploring new ways to write cleaner code, I hope this project is as fun for you as it was for me.
-```
+
 
 ## Contact
 
