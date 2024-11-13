@@ -1,74 +1,86 @@
-# Custom Ninja Quiz 🥷
+# Async JavaScript Demo
 
-Welcome to my Custom Ninja Quiz project! This is where I bring out the ninja in you by asking fun and engaging ninja-related questions. This project uses HTML, CSS (with Tailwind), and JavaScript to create an interactive quiz experience. Let's dive into the details!
+Welcome to the **Async JavaScript Demo** project! Here, I dive into the world of asynchronous JavaScript to explore different ways of fetching and handling data. Through this project, I demonstrate the evolution of asynchronous code in JavaScript, from the old `XMLHttpRequest` method to modern techniques like `fetch` and `async/await`.
 
-## Overview
+## Project Overview
 
-In this project, you'll find a collection of ninja-themed questions designed to test your ninja knowledge. I've used vanilla JavaScript to dynamically generate the quiz questions and handle the form submission. The styling is done using Tailwind CSS to ensure a sleek and modern look.
+With this project, I aim to provide a hands-on look at the various ways we can handle async operations in JavaScript. I’m focusing on how to fetch JSON data from external resources (in this case, sample to-do lists) using three main approaches:
+1. **Async/Await**
+2. **Fetch API (Promises)**
+3. **XMLHttpRequest (Legacy)**
 
-## Getting Started
+## Files and Directories
 
-To get started with the Custom Ninja Quiz, follow these steps:
+- `index.html` — The HTML file containing the basic structure for the demo.
+- `js/sandbox.js` — The JavaScript file where all the asynchronous functions and event handlers are written.
+- `todos/` — A folder with three sample JSON files (`taiwo.json`, `musa.json`, and `luigi.json`), each representing a to-do list for different users.
 
-1. **Clone the repo**:
-    ```sh
-    git clone https://github.com/belovedafolabi/ninja-quiz.git
-    ```
-2. **Navigate to the project directory**:
-    ```sh
-    cd ninja-quiz
-    ```
-3. **Install project dependencies**:
-    ```sh
-    npm install
-    ```
-4. **Open `index.html` in your browser**:
-    ```sh
-    open index.html
-    ```
+## Demo Breakdown
 
-## Quiz Questions
+### 1. Async/Await Function
 
-The quiz consists of fun and quirky ninja-related questions. Each question has multiple choices, and one of them is marked as the correct answer. Here's an example of how the questions are structured in the code:
+In `sandbox.js`, I start by using an `async` function to fetch data from a JSON file. With the help of `await`, this function pauses until the fetch request is resolved, simplifying error handling and making the code more readable. This modern approach is ideal for real-world applications!
 
 ```javascript
-const questionAnswers = [
-    "How do you give a ninja directions? - *Show them a map - Don't worry the ninja would find you",
-    "Why don't ninjas get lost? - They have a sixth sense - *They leave a trail of shurikens",
-    "What do you call a ninja who can’t fight? - *A black belt in hide-and-seek - A shadow expert",
-    "How does a ninja get around? - By stealth mode - *Using ninja stars as wheels",
-    "Why did the ninja go to school? - *To master the art of the silent 'A+' - To become a math ninja"
-];
+const getTodo = async () => {
+    const response = await fetch('../todos/taiwo.json');
+    const data = await response.json();
+    return data;
+};
 ```
 
-## Scrolling to Top
+### 2. Fetch API (Promise-Based)
 
-To enhance user experience, I added a smooth scroll-to-top feature using JavaScript:
+Next, I demonstrate the standard Fetch API, using chained `.then()` methods. This approach is great for projects that need a bit more control over each step of the request and response handling.
 
 ```javascript
-// Smooth scroll to top
-function smoothScrollToTop() {
-    const currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
-    if (currentScroll > 0) {
-        window.requestAnimationFrame(smoothScrollToTop);
-        window.scrollTo(0, currentScroll - currentScroll / 8);
-    }
-}
-
-// Event listener for the button
-document.getElementById('scrollToTopBtn').addEventListener('click', smoothScrollToTop);
+fetch('../todos/taiwo.json')
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(err => console.log('rejected', err));
 ```
 
-## Contact
+### 3. Legacy XMLHttpRequest
 
-Feel free to reach out to me if you have any questions or suggestions!
+I included the XMLHttpRequest method to show how far we’ve come in JavaScript! Using callbacks, I manage the different states of the request, showing how we used to handle async requests before promises and async/await became available.
 
-- **GitHub**: [belovedafolabi](https://github.com/belovedafolabi)
-- **Email**: [belovedafolabi@gmail.com](mailto:belovedafolabi@gmail.com)
-- **LinkedIn**: [belovedafolabi](https://www.linkedin.com/in/beloved-afolabi)
+```javascript
+const getTodos = (resources) => {
+    return new Promise((resolve, reject) => {
+        const request = new XMLHttpRequest();
+        request.addEventListener('readystatechange', () => {
+            if (request.readyState === 4 && request.status === 200) {
+                const data = JSON.parse(request.responseText);
+                resolve(data);
+            } else if (request.readyState === 4) {
+                reject('error getting resource');
+            }
+        });
+        request.open('GET', resources);
+        request.send();
+    });
+};
+```
 
-Happy coding and may your ninja skills be ever sharp! 😄
+## How to Use
 
----
+1. Clone the repository.
+2. Open `index.html` in a browser.
+3. Watch the console log as different async functions fetch and display JSON data!
 
-Let me know if you need any more adjustments or have other questions!
+## What I Learned
+
+Working on this project solidified my understanding of async code in JavaScript. I now have a better grasp of when to use each approach:
+- **Async/Await** is perfect for readability and handling sequential async tasks.
+- **Promises and Fetch** offer more granular control when I need to handle multiple `.then()` steps.
+- **XMLHttpRequest**... well, it’s mostly for historical interest now but shows how async programming evolved.
+
+## Future Improvements
+
+Moving forward, I’d like to:
+- Add error handling for specific status codes to show users more informative messages.
+- Try out additional async patterns, like combining async functions with generators for more complex workflows.
+
+## Closing Thoughts
+
+I created this demo to deepen my understanding of async JavaScript, and I hope it helps you as well! Whether you’re brushing up on async functions or just exploring new ways to write cleaner code, I hope this project is as fun for you as it was for me.
