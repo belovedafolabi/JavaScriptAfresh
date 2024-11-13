@@ -84,3 +84,12 @@ Moving forward, I’d like to:
 ## Closing Thoughts
 
 I created this demo to deepen my understanding of async JavaScript, and I hope it helps you as well! Whether you’re brushing up on async functions or just exploring new ways to write cleaner code, I hope this project is as fun for you as it was for me.
+```
+
+## Contact
+
+Feel free to reach out if you have any questions or suggestions:
+
+- **GitHub**: [belovedafolabi](https://github.com/belovedafolabi)
+- **Email**: [belovedafolabi@gmail.com](mailto:belovedafolabi@gmail.com)
+- **LinkedIn**: [belovedafolabi](https://www.linkedin.com/in/beloved-afolabi)
